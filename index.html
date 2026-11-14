@@ -1,0 +1,170 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tata Astou - Mission Puzzle 💙</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<main class="game">
+
+    <!-- ACCUEIL -->
+    <section id="welcome" class="screen active">
+        <img src="assets/accueil.png" alt="Bienvenue Tata Astou" class="scene">
+
+        <div class="buttons">
+            <button class="btn yes" onclick="startMission()">OUIII 😍</button>
+            <button class="btn no" onclick="sayNo()">NOOON 🙈</button>
+        </div>
+    </section>
+
+    <!-- REFUS DU PUZZLE -->
+    <section id="no-screen" class="screen">
+        <div class="message">
+            <h1>HEINNN ?! 😭</h1>
+            <p>Même pas un petit puzzle pour moi ? Allez stp Tata Astouuu ! 🥺💙</p>
+            <button class="btn yes" onclick="backToWelcome()">BON D'ACCORD, JE JOUE ! 😍</button>
+        </div>
+    </section>
+
+    <!-- MISSION -->
+    <section id="mission" class="screen">
+        <img src="assets/mission.png" alt="Stitch présente la mission" class="scene">
+        <button class="btn ready" onclick="startPuzzle()">JE SUIS PRÊTE ! 🚀</button>
+    </section>
+
+    <!-- PUZZLE -->
+    <section id="puzzle" class="screen">
+        <div class="message puzzle-intro">
+            <h1>MISSION PUZZLE 🧩</h1>
+            <p>À toi de jouer Tata Astou ! 💙</p>
+            <p>Replace les 20 pièces au bon endroit !</p>
+            <p>Tu peux regarder l'image modèle pour t'aider. 👀</p>
+        </div>
+
+        <div class="puzzle-container">
+            <div class="reference">
+                <h2>IMAGE MODÈLE 👀</h2>
+                <img src="assets/puzzle.png" alt="Image originale" id="reference-image">
+                <p>Garde un œil sur le modèle ! 💙</p>
+            </div>
+
+            <div class="game-area">
+                <h2>TON PUZZLE 🧩</h2>
+                <div id="puzzle-board" class="puzzle-board"></div>
+            </div>
+        </div>
+
+        <p id="puzzle-status">0 / 20 pièces bien placées</p>
+
+        <div id="win-message" class="message win-message">
+            <h1>BRAVOOOO TATA ASTOU ! 🎉</h1>
+            <p>Tu as réussi la mission !</p>
+            <p>Mais... une surprise t'attend encore ! 🤫💗</p>
+            <button class="btn ready" onclick="showReward()">DÉCOUVRIR LA SURPRISE 💌</button>
+        </div>
+
+        <button class="btn restart" onclick="createPuzzle()">RECOMMENCER 🔄</button>
+    </section>
+
+    <!-- CONFIRMATION DE LA SURPRISE -->
+    <section id="reward" class="screen">
+        <div class="message">
+            <h1>UNE DERNIÈRE PETITE QUESTION... 👀</h1>
+            <p>Cette surprise vient de Seydina… ❤️</p>
+            <p>Alors Tata Astouuu, tu veux découvrir ce qu'il t'a préparé ? 🥹</p>
+
+            <div class="buttons">
+                <button class="btn yes" onclick="openLetter()">OUIIII 💗</button>
+                <button class="btn no" onclick="refuseLetter()">NOOON 🙈</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- SI ELLE REFUSE LA SURPRISE -->
+    <section id="reward-no" class="screen">
+        <div class="message">
+            <h1>HEINNNN ?! 😭</h1>
+            <p>Tu vas vraiment laisser Seydina avec sa surprise ? 🥺</p>
+            <p>Il a quand même préparé tout ça pour toi... 💙</p>
+            <button class="btn yes" onclick="backToReward()">BON D'ACCORD, JE VEUX VOIR ! 🥹</button>
+        </div>
+    </section>
+
+    <!-- LETTRE FINALE -->
+    <section id="letter-screen" class="screen">
+
+        <div class="letter-heading">
+            <h1>UNE PETITE LETTRE POUR TOI 💌</h1>
+            <p>Préparée avec beaucoup de douceur... 💙</p>
+        </div>
+
+        <div class="letter-scene">
+
+            <div class="letter-paper">
+                <div class="letter-content">
+
+                    <h2>TATA ASTOUUU... 💙</h2>
+
+                    <p>
+                        J'ai créé ce petit jeu pour te faire passer
+                        un message qui me tient à cœur. 🥹
+                    </p>
+
+                    <p>
+                        Je sais qu'on ne se connaît pas depuis longtemps
+                        et que tu as parfois du mal à faire confiance.
+                    </p>
+
+                    <p>
+                        Mais je veux que tu saches que je ne suis pas là
+                        pour jouer avec toi ou faire semblant.
+                        Je préfère te montrer avec le temps que mes
+                        intentions sont sincères.
+                    </p>
+
+                    <p>
+                        J'aime parler avec toi, apprendre à te connaître
+                        et j'aimerais vraiment voir où cette histoire
+                        peut nous mener.
+                    </p>
+
+                    <p>
+                        Alors, accepte qu'on essaie tous les deux,
+                        qu'on se donne une chance et qu'on avance doucement. ❤️
+                    </p>
+
+                    <div class="signature">LOVE U PRINCESSE 💗</div>
+
+                </div>
+            </div>
+
+            <div class="envelope">
+                <div class="envelope-back"></div>
+                <div class="envelope-flap"></div>
+                <div class="envelope-front"></div>
+                <div class="envelope-heart">💙</div>
+            </div>
+
+            <div class="floating-heart heart-one">💗</div>
+            <div class="floating-heart heart-two">💕</div>
+            <div class="floating-heart heart-three">💖</div>
+
+        </div>
+
+        <p class="letter-footer">
+            J'espère que cette petite surprise t'aura fait sourire. 🥹
+        </p>
+
+        <button class="btn ready" onclick="backToWelcome()">RETOUR À L'ACCUEIL 💙</button>
+
+    </section>
+
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>
